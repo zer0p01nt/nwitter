@@ -83,6 +83,8 @@ export default function PostTweetForm() {
     if (files && files.length === 1) {
       if (files[0].size < 1 * 1024 * 1024) {
         setFile(files[0]);
+      } else if (files.length > 1) {
+        alert("You can only upload 1 photo.");
       } else {
         alert("Image size is too big! \nPlease upload under 1MB.");
       }
