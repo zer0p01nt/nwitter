@@ -28,6 +28,7 @@ export default function GithubButton() {
   const onClick = async () => {
     try {
       const provider = new GithubAuthProvider();
+      provider.setCustomParameters({ display: "popup" });
       await signInWithPopup(auth, provider);
       navigate("/");
     } catch (error) {
