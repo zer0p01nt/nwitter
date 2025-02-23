@@ -32,7 +32,14 @@ export default function GithubButton() {
       await signInWithPopup(auth, provider);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      if (
+        error instanceof Error &&
+        error.message.includes("account-exists-with-different-credential")
+      ) {
+        alert("You already have an account signed up with the same email.");
+      } else {
+        console.error(error);
+      }
     }
   };
   return (
