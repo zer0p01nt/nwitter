@@ -37,10 +37,8 @@ export default function GithubButton() {
         error.message.includes("account-exists-with-different-credential")
       ) {
         alert("You already have an account signed up with the same email.");
-        console.error(error);
-      } else {
-        console.error(error);
       }
+      console.error(error);
     }
   };
   return (
